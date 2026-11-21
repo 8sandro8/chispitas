@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:17
+    container_name: chispitas-db
+    environment:
+      POSTGRES_DB: chispitas
+      POSTGRES_USER: chispitas_user
+      POSTGRES_PASSWORD: chispitas_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - chispitas_data:/var/lib/postgresql/data
+
+volumes:
+  chispitas_data:
+
